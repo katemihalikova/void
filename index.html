@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Emoji", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        background-color: white;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        text-align: center;
+      }
+
+      h1 {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: .7em;
+      }
+
+      body:fullscreen * {
+        display: none;
+      }
+      body:-moz-full-screen * {
+        display: none;
+      }
+      body:-ms-fullscreen * {
+        display: none;
+      }
+      body:-webkit-full-screen * {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>void</h1>
+    <p>Just a white void for your device 🏳</p>
+    <button>Show void</button>
+
+    <script type="text/javascript">
+      var body = document.body;
+      var requestFullscreen = body.requestFullscreen || body.mozRequestFullScreen || body.msRequestFullscreen || body.webkitRequestFullScreen || function() {
+        this.innerHTML = "";
+      };
+      document.getElementsByTagName("button")[0].addEventListener("click", requestFullscreen.bind(body));
+    </script>
+  </body>
+</html>
